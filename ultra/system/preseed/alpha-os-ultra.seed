@@ -1,0 +1,16 @@
+# ubiquity doesn't copy over /etc/default/grub. This copies a version
+# with nouveau hardware accelleration turned off, for compatibility
+# with the 940m
+ubiquity ubiquity/success_command in-target mv /etc/default/grub /etc/default/grub.bak ; \
+in-target mv /etc/alpha-scripts/grub /etc/default ; \
+in-target grub-update ; \
+# fix path in /boot/efi/startup.nsh, which defaults to ubuntu
+in-target sed -i "/ubuntu/alpha/g" /boot/efi/startup.nsh ; \
+# replace faulty grubx64.efi with working grub.efi.  The system will boot into
+# a GRUB prompt without this
+in-target rm /boot/efi/EFI/alpha/grubx64.efi ; \
+in-target cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/alpha/grubx64.efi ; \
+in-target chmod 700 /boot/efi/EFI/alpha/grubx64.efi ; \
+# remove live desktop icons files
+in-target rm /etc/xdg/autostart/aos-live-icons.desktop /etc/alpha-scripts/aos-live-icons.sh \
+/etc/alpha-scripts/litebook-desktop-icons-start.sh
