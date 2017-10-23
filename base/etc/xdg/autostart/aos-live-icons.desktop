@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=aos-live-icons.desktop
+Exec=/etc/alpha-scripts/aos-live-icons.sh
+NoDisplay=true

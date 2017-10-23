@@ -1,0 +1,9 @@
+PRETTY_NAME="Alpha OS 1.0.0 Polaris"
+NAME="Alpha OS"
+VERSION_ID="1.0.0"
+VERSION="1.0.0 Polaris"
+ID=alpha
+ID_LIKE=ubuntu
+HOME_URL="https://alpha.store/"
+SUPPORT_URL="https://alpha.store/forums/forum/alpha-product-discussion/"
+BUG_REPORT_URL="https://alpha.store/forums/forum/alpha-product-discussion/"
