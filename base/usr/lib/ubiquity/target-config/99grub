@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#
+# 	Author	:	James Buren (https://launchpad.net/~ryu0)
+#	Brief 	:	A script to force grub-install and update-grub to set 
+#				GRUB_DISTRIBUTOR to ubuntu. Using this allows new Alpha OS 
+#				installs to build a /boot/efi/EFI/ubuntu directory. 
+#
+#				Without this dir, new installs of Alpha OS will boot into
+#				a GRUB prompt, and kernel upgrades may cause the same problem.
+#
+
+set -e
+
+# create the grub.d directory and place the needed config there
+mkdir -p /target/etc/default/grub.d
+cat > /target/etc/default/grub.d/50_alphaos.cfg << 'EOF'
+GRUB_DISTRIBUTOR="Ubuntu"
+EOF
+
+# rewrite GRUB menu entries to show Alpha OS instead of ubuntu
+sed -i '/Ubuntu|Kubuntu)/{n;s/OS=.*/OS="$(lsb_release -sd)"/}' /target/etc/grub.d/10_linux
+
