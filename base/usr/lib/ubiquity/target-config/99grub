@@ -1,13 +1,13 @@
 #!/bin/sh
 
 #
-# 	Author	:	James Buren (https://launchpad.net/~ryu0)
-#	Brief 	:	A script to force grub-install and update-grub to set 
-#				GRUB_DISTRIBUTOR to ubuntu. Using this allows new Alpha OS 
-#				installs to build a /boot/efi/EFI/ubuntu directory. 
+#   Author  :   James Buren (https://launchpad.net/~ryu0)
+#   Brief   :   A script to force grub-install and update-grub to set
+#               GRUB_DISTRIBUTOR to ubuntu. Using this allows new Alpha OS
+#               installs to build a /boot/efi/EFI/ubuntu directory.
 #
-#				Without this dir, new installs of Alpha OS will boot into
-#				a GRUB prompt, and kernel upgrades may cause the same problem.
+#               Without this dir, new installs of Alpha OS will boot into
+#               a GRUB prompt, and kernel upgrades may cause the same problem.
 #
 
 set -e
