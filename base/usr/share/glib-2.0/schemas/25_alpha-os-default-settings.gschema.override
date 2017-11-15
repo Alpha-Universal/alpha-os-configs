@@ -8,7 +8,7 @@ theme='Gtk+'
 [org.gnome.desktop.background]
 draw-background=true
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/Haleakala-summit_Farid-Askerov.jpg'
+picture-uri='file:///usr/share/backgrounds/untitled_Farid-Askerov.jpg'
 primary-color='#000000'
 show-desktop-icons=true
 
@@ -22,7 +22,7 @@ xkb-options=['grp:alt_shift_toggle']
 cursor-theme='elementary'
 document-font-name='Open Sans 10'
 font-name='Open Sans 9'
-gtk-theme='Numix'
+gtk-theme='Arc-Darker'
 icon-theme='Numix-Circle'
 monospace-font-name='Roboto Mono 10'
 show-unicode-menu=false
@@ -87,7 +87,7 @@ titlebar-uses-system-font=false
 
 [org.gnome.mutter]
 auto-maximize=false
-overlay-key=''
+overlay-key='Super_L'
 center-new-windows=true
 workspaces-only-on-primary=true
 
@@ -133,6 +133,7 @@ overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/Decor
 
 [org.pantheon.desktop.gala.behavior]
 panel-main-menu-action='wingpanel --toggle-indicator=app-launcher'
+overlay-action='wingpanel --toggle-indicator=app-launcher'
 
 [org.pantheon.noise.settings]
 update-folder-hierarchy=true
@@ -142,3 +143,6 @@ write-metadata-to-file=true
 highlight-matching-brackets=true
 show-line-numbers=true
 style-scheme='cobalt'
+
+[org.pantheon.desktop.cerbere]
+monitored-processes=['wingpanel', 'plank', 'slingshot-launcher --silent', 'nautilus -n']
