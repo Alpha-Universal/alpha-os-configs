@@ -1,6 +1,0 @@
-# ubiquity doesn't copy over /etc/default/grub. This copies a version
-# with nouveau hardware accelleration turned off, for compatibility
-# with the 940m
-ubiquity ubiquity/success_command in-target mv /etc/default/grub /etc/default/grub.bak ; \
-in-target mv /etc/alpha-scripts/grub /etc/default ; \
-in-target grub-update
